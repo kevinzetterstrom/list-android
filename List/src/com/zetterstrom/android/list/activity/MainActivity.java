@@ -34,6 +34,7 @@ import android.widget.ListView;
 public class MainActivity extends ActionBarActivity {
     private DrawerLayout mDrawerLayout;
     private ListView mDrawerList;
+    @SuppressWarnings("deprecation")
     private ActionBarDrawerToggle mDrawerToggle;
     private CharSequence mTitle;
     private ArrayList<ListDetails> mListDetails;
@@ -43,11 +44,12 @@ public class MainActivity extends ActionBarActivity {
     private ListDbHelper mDbHelper = null;
     private ListFragment mFragment;
 
+    @SuppressWarnings("deprecation")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        getSupportActionBar().setTitle("List");
+        getSupportActionBar().setTitle(R.string.app_name);
 
         mDbHelper = new ListDbHelper(this);
         mDrawerLayout = (DrawerLayout) findViewById(R.id.main_drawer_layout);
@@ -167,6 +169,7 @@ public class MainActivity extends ActionBarActivity {
         return super.onPrepareOptionsMenu(menu);
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (mDrawerToggle.onOptionsItemSelected(item)) {
@@ -193,6 +196,7 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     protected void onPostCreate(Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
@@ -200,6 +204,7 @@ public class MainActivity extends ActionBarActivity {
         mDrawerToggle.syncState();
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public void onConfigurationChanged(Configuration newConfig) {
         super.onConfigurationChanged(newConfig);
@@ -276,10 +281,10 @@ public class MainActivity extends ActionBarActivity {
     private void createNewList() {
         final EditText input = new EditText(this);
         AlertDialog.Builder builder = new AlertDialog.Builder(MainActivity.this);
-        builder.setTitle("New List Title:")
+        builder.setTitle(R.string.alert_new_title)
                 .setCancelable(false)
                 .setView(input)
-                .setPositiveButton("Create",
+                .setPositiveButton(R.string.alert_create,
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 String inputText = input.getText().toString();
@@ -289,7 +294,7 @@ public class MainActivity extends ActionBarActivity {
                                 addList(inputText);
                             }
                         })
-                .setNegativeButton("Cancel",
+                .setNegativeButton(R.string.alert_cancel,
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 dialog.cancel();
@@ -340,7 +345,7 @@ public class MainActivity extends ActionBarActivity {
         } else {
             FragmentManager fragmentManager = getSupportFragmentManager();
             fragmentManager.beginTransaction().remove(mFragment).commit();
-            getSupportActionBar().setTitle("List");
+            getSupportActionBar().setTitle(R.string.app_name);
         }
     }
 }

@@ -20,7 +20,7 @@ public class SettingsActivity extends PreferenceActivity {
 		addPreferencesFromResource(R.xml.preferences);
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
 			getActionBar().setDisplayHomeAsUpEnabled(true);
-			getActionBar().setTitle("Settings");
+			getActionBar().setTitle(R.string.settings_title);
 		}
 	}
 

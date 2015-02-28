@@ -2,6 +2,7 @@
 <resources>
 
     <string name="app_name">List</string>
+    <string name="settings_title">Settings</string>
     <string name="drawer_open">List</string>
     <string name="drawer_close">List</string>
     <string name="version">Version</string>
@@ -11,5 +12,8 @@
     <string name="action_new">New List</string>
     <string name="new_item_hint">new list item</string>
     <string name="about">About</string>
+    <string name="alert_cancel">Cancel</string>
+    <string name="alert_create">Create</string>
+    <string name="alert_new_title">New List Title:</string>
 
 </resources>
