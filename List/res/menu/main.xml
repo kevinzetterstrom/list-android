@@ -1,0 +1,23 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:lists="http://schemas.android.com/apk/res-auto" >
+
+    <item
+        android:id="@+id/action_new"
+        android:icon="@drawable/ic_action_new_label"
+        android:orderInCategory="100"
+        android:title="@string/action_new"
+        lists:showAsAction="always"/>
+    <item
+        android:id="@+id/action_remove"
+        android:icon="@drawable/ic_action_remove"
+        android:orderInCategory="200"
+        android:title="@string/action_remove"
+        lists:showAsAction="never"/>
+    <item
+        android:id="@+id/action_settings"
+        android:icon="@drawable/ic_action_settings"
+        android:orderInCategory="200"
+        android:title="@string/action_settings"
+        lists:showAsAction="never"/>
+
+</menu>
